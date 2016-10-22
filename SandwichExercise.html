@@ -1,0 +1,42 @@
+<html>
+    <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <style>
+        body{background-color: #a4c28a; margin-left: 35%; margin-top: 15%; font-size: 16px;}
+        p{text-align: center; max-width: 500px;}
+        button{font-weight: bold; font-size: 1.5em;}
+    </style>
+        <script>
+        
+        var bread = ["Rye ", "Whole Weat ", "Honey Oats ", "English Muffin ", "White "];
+        var condiments = ["Grey Poupon ", "Mayo ", "Ketchup ", "Dijon Mustard ", "Penut Butter "]; 
+        var fixings = ["Lettuce ", "Tomatos ", "Ham ", "M&M's ", "Cheese ", "Bacon ", "Roast Beef "];
+        // //Body Onload loadMonths() function to print months Array into 'p1'
+        // function loadSandwhich(){
+        //     document.getElementById('p1').innerHTML = months;
+        // }
+
+        //Button Click function to generate random months
+           $(document).ready(function(){
+                $('#myButton').click(function(){
+                    //Get a random number and display it to the user
+                    //We need to use the javascript MATH object and call two functions against it for this to work
+                    var randomIndex1 = (Math.ceil(Math.random() * bread.length)-1);
+                        randomBread = bread[randomIndex1];
+                    var randomIndex2 = (Math.ceil(Math.random() * condiments.length)-1);
+                        randomCondiments = condiments[randomIndex2];
+                    var randomIndex3 = (Math.ceil(Math.random() * fixings.length)-1);
+                        randomFixings = fixings[randomIndex3];
+                        $('#p1').text("The sandwich I'm making for you today is " + randomFixings + "and " + randomCondiments + "on " + randomBread);
+                    // document.getElementById('p1').innerHTML = '"The sandwich I am making for you today is " + randomFixings + "and " + randomCondiments + "on " randomBread;'
+                });
+           });
+
+        </script>
+    </head>
+        <img src="http://foodnetwork.sndimg.com/content/dam/images/food/fullset/2013/8/22/0/FN_sandwich-thinkstock_s4x3.jpg" style="height:300px; width:500px; display: inline-block">
+    <body >
+        <button id="myButton" style="background-color: #9cc271; height: 100px; width:500px; display: block">Randomize my sandwich</button>
+        <p id="p1"></p>
+    </body>
+</html>
